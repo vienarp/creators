@@ -326,6 +326,55 @@ body:not(.editing) .shot img{cursor:zoom-in}
  }
 }
 
+
+/* ===== LOGIN ADMIN — VIENA CREATORS ===== */
+#loginModal .adminLoginBox{
+ position:relative;overflow:visible;width:min(500px,calc(100vw - 36px));
+ padding:34px 30px 28px;border-color:rgba(180,76,255,.34);
+ background:
+ radial-gradient(circle at 100% 0,rgba(180,76,255,.13),transparent 34%),
+ #111115;
+ box-shadow:0 30px 90px rgba(0,0,0,.68),0 0 34px rgba(180,76,255,.08)
+}
+.admin-login-kicker{font-size:10px;font-weight:900;letter-spacing:.2em;color:#b44cff;margin-bottom:9px}
+#loginModal .modalBox h3{font-size:30px;line-height:.95;margin:0 0 12px;letter-spacing:-.04em}
+#loginModal .modalBox h3 span{color:#b44cff;font-family:"Segoe Print","Comic Sans MS",cursive;font-size:.92em}
+#loginModal .modalBox p{margin:0 0 18px;color:#a99caf}
+#loginModal .modalBox input{position:relative;z-index:2;background:rgba(7,7,10,.92);border-color:#302438}
+#loginModal .modalBox input:focus{border-color:#8a19e6;box-shadow:0 0 0 3px rgba(138,25,230,.10)}
+#loginModal .modalActions{position:relative;z-index:2}
+#loginModal .modalActions .go{box-shadow:0 0 20px rgba(138,25,230,.28)}
+.adminWatcher{
+ position:absolute;z-index:1;width:150px;height:auto;right:-92px;top:-76px;
+ filter:drop-shadow(0 15px 22px rgba(0,0,0,.55));pointer-events:none
+}
+@media(max-width:720px){
+ .adminWatcher{width:105px;right:-8px;top:-82px}
+ #loginModal .adminLoginBox{margin-top:50px;padding:28px 22px 22px}
+ #loginModal .modalBox h3{font-size:26px}
+}
+
+/* ===== CURSOR — CIANO REAL (corrige o verde) =====
+   A arte-base é vermelha; 180deg leva o vermelho diretamente para ciano.
+*/
+@media(pointer:fine){
+ .spray-cursor{
+   width:13px!important;height:26px!important;
+   transform:translate(-3px,-2px) rotate(-14deg)!important;
+   filter:hue-rotate(180deg) saturate(3.25) brightness(1.18) contrast(1.12)
+          drop-shadow(0 2px 3px rgba(0,0,0,.62))
+          drop-shadow(0 0 5px rgba(0,225,240,.72))!important
+ }
+ .spray-cursor.active{
+   width:16px!important;height:31px!important;
+   filter:hue-rotate(180deg) saturate(3.45) brightness(1.24) contrast(1.12)
+          drop-shadow(0 2px 4px rgba(0,0,0,.65))
+          drop-shadow(0 0 7px rgba(0,225,240,.88))!important
+ }
+ .spray-cursor.click{transform:translate(-3px,-2px) rotate(-9deg) scale(.9)!important}
+ .spray-dot{background:#00e1f0!important;box-shadow:0 0 9px #00e1f0!important}
+}
+
 </style>
 <link rel="icon" type="image/png" href="assets/asset-01.png">
 <link rel="shortcut icon" type="image/png" href="assets/asset-01.png">
@@ -417,9 +466,9 @@ body:not(.editing) .shot img{cursor:zoom-in}
 <div class="toast" id="toast">Alterações publicadas para todos.</div>
 
 <div class="modalBack" id="loginModal">
-  <div class="modalBox">
-    <h3>Área administrativa</h3>
-    <p>Entre com o e-mail e a senha do usuário criado no Supabase.</p>
+  <div class="modalBox adminLoginBox">
+    <img class="adminWatcher" src="assets/admin-binoculos.png" alt="" aria-hidden="true">
+    <div class="admin-login-copy"><div class="admin-login-kicker">VIENA CREATORS • STAFF ONLY</div><h3>ACESSO <span>RESTRITO</span></h3><p>Só entra quem tem autorização. 👀</p></div>
     <input id="adminEmail" type="email" placeholder="E-mail">
     <input id="adminPassword" type="password" placeholder="Senha">
     <div class="modalActions">
