@@ -299,6 +299,33 @@ body:not(.editing) .shot img{cursor:zoom-in}
  .spray-cursor.click{transform:translate(-4px,-3px) rotate(-9deg) scale(.9)!important}
 }
 
+
+/* ===== CURSOR FINAL — CIANO DA MASCOTE ===== */
+@media (pointer:fine){
+ .spray-cursor{
+   width:14px!important;
+   height:28px!important;
+   transform:translate(-3px,-2px) rotate(-14deg)!important;
+   filter:hue-rotate(145deg) saturate(3.8) brightness(1.32) contrast(1.08)
+          drop-shadow(0 2px 3px rgba(0,0,0,.62))
+          drop-shadow(0 0 5px rgba(0,220,235,.78))!important;
+ }
+ .spray-cursor.active{
+   width:17px!important;
+   height:33px!important;
+   filter:hue-rotate(145deg) saturate(4) brightness(1.38) contrast(1.08)
+          drop-shadow(0 2px 4px rgba(0,0,0,.65))
+          drop-shadow(0 0 7px rgba(0,220,235,.92))!important;
+ }
+ .spray-cursor.click{
+   transform:translate(-3px,-2px) rotate(-9deg) scale(.9)!important;
+ }
+ .spray-dot{
+   background:#00dceb!important;
+   box-shadow:0 0 9px #00dceb!important;
+ }
+}
+
 </style>
 <link rel="icon" type="image/png" href="assets/asset-01.png">
 <link rel="shortcut icon" type="image/png" href="assets/asset-01.png">
